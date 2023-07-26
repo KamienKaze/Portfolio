@@ -1,0 +1,17 @@
+@import "./../../../../assets/color-palette.scss";
+
+:host {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 10rem;
+
+  background-color: $blue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+  height: fit-content;
+
+  color: $font-dark;
+}
