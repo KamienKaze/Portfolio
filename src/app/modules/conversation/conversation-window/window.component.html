@@ -8,8 +8,9 @@
     <div class='active'></div>
     <div class='name'>Michał Kamiński</div>
     <div class='info'>You are friends on Facebook</div>
-    <div class='info'>Lives in: Gorzów Wielkopolski</div>
+    <div class='info'>Lives in: <a href='https://www.google.com/maps/place/Gorz%C3%B3w+Wielkopolski/@52.7313279,15.2182354,12z/data=!3m1!4b1!4m6!3m5!1s0x47071f0a5a4118b7:0x5dd10df3cb5799dd!8m2!3d52.7325285!4d15.2369305!16zL20vMDFyY2sx?entry=ttu'>Gorzów Wielkopolski</a></div>
   </div>
+  <app-message *ngFor='let message of messages'>{{message}}</app-message>
 </div>
 <div class='footer'>
   <svg class='icon'>
@@ -18,8 +19,8 @@
   <svg class='icon'>
     <use [attr.xlink:href]="linkedinLogoSrc"></use>
   </svg>
-  <input type='text'>
-  <svg class='like-icon'>
-    <use [attr.xlink:href]="likeLogoSrc"></use>
+  <input type='text' [(ngModel)]='messageToSend'>
+  <svg class='send-icon' (click)='onSendClick()'>
+    <use [attr.xlink:href]="sendLogoSrc"></use>
   </svg>
 </div>

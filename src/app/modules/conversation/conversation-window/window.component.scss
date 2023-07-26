@@ -91,6 +91,10 @@
 
         user-select: none;
         font-size: 0.9rem;
+
+        a {
+          color: $font-accent-dark;
+        }
       }
     }
   }
@@ -118,7 +122,7 @@
     input {
       width: calc(100% - (3 * 24px) - (3 * 1rem) - 3rem);
       height: 1.7rem;
-      margin: 0 0.5rem 0 0.5rem;
+      margin: 0 0.5rem 0 0;
       padding: 0 1rem 0 1rem;
 
       background-color: $accent-dark;
@@ -130,15 +134,12 @@
       outline: none;
     }
 
-    .like-icon {
-      width: 16px;
-      height: 16px;
-      margin: 0 0.2rem 0.2rem 0;
+    .send-icon {
+      width: 24px;
+      height: 24px;
 
       text-align: center;
       fill: $blue;
-
-      transform: scale(1.5);
     }
   }
 }
