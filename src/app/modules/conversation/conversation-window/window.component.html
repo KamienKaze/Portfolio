@@ -15,12 +15,16 @@
   <app-message *ngFor='let message of messages' [isBlue]='message.isBlue'>{{message.content}}</app-message>
 </div>
 <div class='footer'>
-  <svg class='icon'>
-    <use [attr.xlink:href]="githubLogoSrc"></use>
-  </svg>
-  <svg class='icon'>
-    <use [attr.xlink:href]="linkedinLogoSrc"></use>
-  </svg>
+  <a href='https://github.com/KamienKaze'>
+    <svg class='icon'>
+      <use [attr.xlink:href]="githubLogoSrc"></use>
+    </svg>
+  </a>
+  <a href='https://www.linkedin.com/in/micha%C5%82-kami%C5%84ski-627651254/'>
+    <svg class='icon'>
+      <use [attr.xlink:href]="linkedinLogoSrc"></use>
+    </svg>
+  </a>
   <input type='text' [(ngModel)]='messageToSend' (keydown.enter)='onSendClick()'>
   <svg class='send-icon' (click)='onSendClick()'>
     <use [attr.xlink:href]="sendLogoSrc"></use>

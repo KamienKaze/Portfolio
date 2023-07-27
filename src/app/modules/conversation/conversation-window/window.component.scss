@@ -107,6 +107,8 @@
         }
       }
     }
+
+
   }
 
   .footer {
@@ -127,6 +129,14 @@
       height: 24px;
 
       fill: $blue;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
 
     input {
@@ -150,10 +160,36 @@
 
       text-align: center;
       fill: $blue;
-    }
 
-    .send-icon:active {
-      transform: scale(0.9);
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 1.2vw;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $scrollbar-track-dark;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $scrollbar-handle-dark;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-handle-hover-dark;
   }
 }
