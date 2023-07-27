@@ -30,6 +30,8 @@ export class WindowComponent {
 
   public messages: Array<Message> = [];
 
+  public time: Date = new Date();
+
   public onSendClick(): void {
     if (this.messageToSend != '') {
       this.messages.push({ content: this.messageToSend, isBlue: true });
