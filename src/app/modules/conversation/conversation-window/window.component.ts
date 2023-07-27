@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MessageManagerService } from '../message-manager.service';
 import { Message } from '../message';
 
@@ -8,6 +8,7 @@ import { Message } from '../message';
   styleUrls: ['./window.component.scss'],
 })
 export class WindowComponent {
+  @ViewChild('scrollMe') private myScrollContainer!: ElementRef;
   public githubLogoSrc: string = 'assets/icons/icons.svg#github';
   public linkedinLogoSrc: string = 'assets/icons/icons.svg#linkedin';
   public sendLogoSrc: string = 'assets/icons/icons.svg#send';
@@ -20,13 +21,23 @@ export class WindowComponent {
     if (this.messageToSend != '') {
       this.messages.push({ content: this.messageToSend, isBlue: true });
       this.messageToSend = '';
+      this.scrollToBottom();
     }
+  }
+
+  scrollToBottom(): void {
+    setTimeout((): void => {
+      try {
+        this.myScrollContainer.nativeElement.scrollTop =
+          this.myScrollContainer.nativeElement.scrollHeight;
+      } catch (err) {}
+    });
   }
 
   constructor(private messageManager: MessageManagerService) {
     messageManager.messagesSubject$.subscribe((message: Message): void => {
       this.messages.push(message);
-      console.log(message);
+      this.scrollToBottom();
     });
 
     messageManager.runMessages();
