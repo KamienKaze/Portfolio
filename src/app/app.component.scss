@@ -24,6 +24,24 @@
   }
 }
 
+@keyframes info-enter {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes info-exit {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
 :host {
   background-color: $background-dark;
   width: 100%;
@@ -33,6 +51,14 @@
   flex-direction: row;
 
   overflow: hidden;
+
+  app-conversation-window {
+    height: 100%;
+  }
+
+  app-info-section {
+    height: 100%;
+  }
 
   .active-info {
     display: flex;

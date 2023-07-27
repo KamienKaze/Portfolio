@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { MessageManagerService } from '../message-manager.service';
 import { Message } from '../message';
+import { InfoExpandManagerService } from '../../shared/info-expand-manager.service';
 
 @Component({
   selector: 'app-conversation-window',
@@ -15,9 +16,6 @@ import { Message } from '../message';
   styleUrls: ['./window.component.scss'],
 })
 export class WindowComponent {
-  @Output() isInfoExpanded: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Input('isInfoExpanded') public isInfoButtonActive: boolean = false;
-
   @ViewChild('scrollMe') private myScrollContainer!: ElementRef;
 
   public githubLogoSrc: string = 'assets/icons/icons.svg#github';
@@ -40,16 +38,15 @@ export class WindowComponent {
     }
   }
 
+  public changeInfoState(): void {
+    this.infoExpandManager.changeInfoState();
+  }
+
   private showTypingPopup(): void {
     setTimeout((): void => {
       this.isSending = true;
       this.scrollToBottom();
     }, 1000);
-  }
-
-  public changeInfoPanelState(): void {
-    this.isInfoButtonActive = !this.isInfoButtonActive;
-    this.isInfoExpanded.emit(this.isInfoButtonActive);
   }
 
   private scrollToBottom(): void {
@@ -61,9 +58,10 @@ export class WindowComponent {
     });
   }
 
-  constructor(private messageManager: MessageManagerService) {
-    this.showTypingPopup();
-
+  constructor(
+    private messageManager: MessageManagerService,
+    private infoExpandManager: InfoExpandManagerService,
+  ) {
     messageManager.messagesSubject$.subscribe((message: Message): void => {
       this.messages.push(message);
       this.isSending = false;
@@ -71,6 +69,7 @@ export class WindowComponent {
       this.scrollToBottom();
     });
 
+    this.showTypingPopup();
     messageManager.runMessages();
   }
 }

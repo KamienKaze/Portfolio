@@ -4,7 +4,7 @@
     <div class='name dark'>Michał Kamiński</div>
   </a>
   <div class='info-container'>
-    <svg class='info-icon' xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="3 3 30 30" (click)='changeInfoPanelState()'>
+    <svg class='info-icon' xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="3 3 30 30" (click)='changeInfoState()'>
       <use [attr.xlink:href]="infoIconSrc"></use>
     </svg>
   </div>
@@ -14,8 +14,8 @@
     <img class='notification-picture' src='assets/images/kamienkaze.jpg' alt='profile-picture'>
     <div class='active'></div>
     <div class='name'>Michał Kamiński</div>
-    <div class='info'>You are friends on Facebook</div>
-    <div class='info'>Lives in: <a href='https://www.google.com/maps/place/Gorz%C3%B3w+Wielkopolski/@52.7313279,15.2182354,12z/data=!3m1!4b1!4m6!3m5!1s0x47071f0a5a4118b7:0x5dd10df3cb5799dd!8m2!3d52.7325285!4d15.2369305!16zL20vMDFyY2sx?entry=ttu'>Gorzów Wielkopolski</a></div>
+    <div class='info'>Front-end developer</div>
+    <div class='info'>Lives in: <a href='https://www.google.com/maps/place/Gorz%C3%B3w+Wielkopolski/@52.7235754,15.0753229,11.21z/data=!4m6!3m5!1s0x47071f0a5a4118b7:0x5dd10df3cb5799dd!8m2!3d52.7325285!4d15.2369305!16zL20vMDFyY2sx?entry=ttu'>Gorzów Wielkopolski</a></div>
   </div>
   <div class='time-display' *ngIf='messages.length != 0'>{{time | date:'HH:mm'}}</div>
   <app-message *ngFor='let message of messages' [isBlue]='message.isBlue'>{{message.content}}</app-message>

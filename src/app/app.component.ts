@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InfoExpandManagerService } from './modules/shared/info-expand-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public isInfoExpanded: boolean = false;
 
-  public updateIsInfoExpanded(event: boolean): void {
-    this.isInfoExpanded = event;
-    console.log(event);
+  public currentInfoClass: string = '';
+  public currentMainClass: string = '';
+
+  constructor(private infoExpandManager: InfoExpandManagerService) {
+    infoExpandManager.isInfoExpanded.subscribe(
+      (isInfoExpanded: boolean): void => {
+        this.isInfoExpanded = isInfoExpanded;
+      },
+    );
   }
 }
