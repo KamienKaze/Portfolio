@@ -1,0 +1,56 @@
+@import "./../../../../assets/color-palette.scss";
+
+:host {
+
+  app-message {
+    padding: 0;
+
+    .animation-container {
+      height: 1em;
+
+      display: flex;
+      flex-direction: row;
+      column-gap: 0.1rem;
+
+      justify-content: center;
+      align-items: center;
+
+      @keyframes jumping-ball {
+        0%, 60% {
+          transform: translateY(0);
+          background-color: $font-accent-dark;
+        }
+
+        80% {
+          transform: translateY(-0.2rem);
+          background-color: $font-dark;
+        }
+      }
+
+      .jumping-ball {
+        height: 0.5rem;
+        width: 0.5rem;
+
+        border-radius: 100%;
+
+        background-color: $font-accent-dark;
+
+        animation-name: jumping-ball;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+      }
+
+      .one {
+        animation-delay: 0s;
+      }
+
+      .two {
+        animation-delay: 0.15s;
+      }
+
+      .three {
+        animation-delay: 0.3s;
+      }
+    }
+  }
+}

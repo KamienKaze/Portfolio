@@ -25,12 +25,12 @@ export class MessageManagerService {
     let time: number = 2000;
 
     for (let i: number = 0; i < this.messages.length; i++) {
-      time += this.messages[i].content.length * 80;
+      time += this.messages[i].content.length * 120;
       setTimeout(
         (): void => {
           this.sendMessage(i);
         },
-        (this.messages[i].content.length * 80) / 2 + time,
+        (this.messages[i].content.length * 120) / 2 + time,
       );
     }
   }

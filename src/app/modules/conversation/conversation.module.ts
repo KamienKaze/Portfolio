@@ -4,9 +4,10 @@ import { WindowComponent } from './conversation-window/window.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { MessageComponent } from './message/message.component';
+import { TypingPopupComponent } from './typing-popup/typing-popup.component';
 
 @NgModule({
-  declarations: [WindowComponent, MessageComponent],
+  declarations: [WindowComponent, MessageComponent, TypingPopupComponent],
   exports: [WindowComponent],
   imports: [CommonModule, SharedModule, FormsModule],
 })

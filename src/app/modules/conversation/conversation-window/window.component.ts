@@ -14,6 +14,7 @@ export class WindowComponent {
   public sendLogoSrc: string = 'assets/icons/icons.svg#send';
 
   public messageToSend: string = '';
+  public isSending: boolean = false;
 
   public messages: Array<Message> = [];
 
@@ -25,7 +26,13 @@ export class WindowComponent {
     }
   }
 
-  scrollToBottom(): void {
+  private showTypingPopup(): void {
+    setTimeout((): void => {
+      this.isSending = true;
+    }, 1000);
+  }
+
+  private scrollToBottom(): void {
     setTimeout((): void => {
       try {
         this.myScrollContainer.nativeElement.scrollTop =
@@ -35,8 +42,12 @@ export class WindowComponent {
   }
 
   constructor(private messageManager: MessageManagerService) {
+    this.showTypingPopup();
+
     messageManager.messagesSubject$.subscribe((message: Message): void => {
       this.messages.push(message);
+      this.isSending = false;
+      this.showTypingPopup();
       this.scrollToBottom();
     });
 
