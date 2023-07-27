@@ -1,5 +1,21 @@
 @import "./../../../../assets/color-palette.scss";
 
+@media screen and (max-width: 770px) {
+  :host {
+    .background {
+      max-width: 70%;
+    }
+  }
+}
+
+@media screen and (min-width: 771px) {
+  :host {
+    .background {
+      max-width: 40%;
+    }
+  }
+}
+
 :host {
   width: 100%;
   height: fit-content;
@@ -9,7 +25,6 @@
   .background {
     padding: 0.5rem 1rem 0.5rem 1rem;
 
-    max-width: 40%;
     margin-bottom: 0.3rem;
 
     word-break: break-word;
