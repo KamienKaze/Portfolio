@@ -26,7 +26,6 @@
   align-items: center;
   row-gap: 1rem;
 
-
   .back-button-container {
     width: 100%;
 
@@ -52,7 +51,6 @@
       }
     }
   }
-
 
   .header {
     width: 100%;
@@ -131,6 +129,14 @@
           background: $scrollbar-handle-dark;
         }
       }
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
+  }
+
+  .dropdown-container {
+    width: 100%;
   }
 }

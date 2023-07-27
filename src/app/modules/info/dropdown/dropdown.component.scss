@@ -1,0 +1,31 @@
+@import "./../../../../assets/color-palette.scss";
+
+:host {
+  .button {
+    display: flex;
+    flex-direction: row;
+
+    margin: 1rem;
+    padding: 1rem;
+
+    box-shadow: 0 0 2px $accent-dark;
+    border-radius: 1rem;
+
+    .text{
+      width: 100%;
+
+      font-size: 1.3rem;
+
+      color: $font-dark;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+
+      fill: $font-dark;
+
+      transform: rotate(90deg);
+    }
+  }
+}
