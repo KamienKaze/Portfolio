@@ -29,6 +29,7 @@ export class WindowComponent {
   private showTypingPopup(): void {
     setTimeout((): void => {
       this.isSending = true;
+      this.scrollToBottom();
     }, 1000);
   }
 
