@@ -2,6 +2,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  Input,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -15,6 +16,8 @@ import { Message } from '../message';
 })
 export class WindowComponent {
   @Output() isInfoExpanded: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input('isInfoExpanded') public isInfoButtonActive: boolean = false;
+
   @ViewChild('scrollMe') private myScrollContainer!: ElementRef;
 
   public githubLogoSrc: string = 'assets/icons/icons.svg#github';
@@ -26,8 +29,6 @@ export class WindowComponent {
   public isSending: boolean = false;
 
   public messages: Array<Message> = [];
-
-  public isInfoButtonActive: boolean = false;
 
   public onSendClick(): void {
     if (this.messageToSend != '') {

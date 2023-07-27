@@ -1,5 +1,21 @@
 @import "./../../../../assets/color-palette.scss";
 
+@media screen and (max-width: 770px) {
+  :host {
+    .back-button-container {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 771px) {
+  :host {
+    .back-button-container {
+      display: none;
+    }
+  }
+}
+
 :host {
   width: 100%;
 
@@ -9,6 +25,34 @@
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
+
+
+  .back-button-container {
+    width: 100%;
+
+    justify-items: flex-start;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin: 1rem;
+
+      fill: $font-dark;
+
+      cursor: pointer;
+
+      transform: rotate(180deg);
+
+      &:hover {
+        transform: scale(1.1) rotate(180deg);
+      }
+
+      &:active {
+        transform: scale(0.9) rotate(180deg);
+      }
+    }
+  }
+
 
   .header {
     width: 100%;
