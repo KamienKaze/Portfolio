@@ -31,7 +31,7 @@
       <use [attr.xlink:href]="linkedinLogoSrc"></use>
     </svg>
   </a>
-  <input type='text' [(ngModel)]='messageToSend' (keydown.enter)='onSendClick()'>
+  <input type='text' [(ngModel)]='messageToSend' (keydown.enter)='onSendClick()' placeholder='Aa'>
   <svg class='send-icon' (click)='onSendClick()'>
     <use [attr.xlink:href]="sendLogoSrc"></use>
   </svg>
