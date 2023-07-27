@@ -5,10 +5,11 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { MessageComponent } from './message/message.component';
 import { TypingPopupComponent } from './typing-popup/typing-popup.component';
+import { InfoModule } from '../info/info.module';
 
 @NgModule({
   declarations: [WindowComponent, MessageComponent, TypingPopupComponent],
   exports: [WindowComponent],
-  imports: [CommonModule, SharedModule, FormsModule],
+  imports: [CommonModule, SharedModule, FormsModule, InfoModule],
 })
 export class ConversationModule {}

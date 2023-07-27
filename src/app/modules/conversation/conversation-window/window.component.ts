@@ -12,6 +12,9 @@ export class WindowComponent {
   public githubLogoSrc: string = 'assets/icons/icons.svg#github';
   public linkedinLogoSrc: string = 'assets/icons/icons.svg#linkedin';
   public sendLogoSrc: string = 'assets/icons/icons.svg#send';
+  public infoIconSrc: string = 'assets/icons/icons.svg#info';
+
+  public isActive: boolean = false;
 
   public messageToSend: string = '';
   public isSending: boolean = false;

@@ -23,8 +23,10 @@
   display: flex;
 
   .background {
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: fit-content;
+    height: fit-content;
 
+    padding: 0.5rem 1rem 0.5rem 1rem;
     margin-bottom: 0.3rem;
 
     word-break: break-word;
@@ -32,21 +34,20 @@
     justify-content: center;
     align-items: center;
 
-    width: fit-content;
-    height: fit-content;
-
     font-size: 1.3rem;
     color: $font-dark;
   }
 
   .blue {
     background-color: $blue;
+
     margin-left: auto;
     border-radius: 1rem 1rem 0.2rem 1rem;
   }
 
   .gray {
     background-color: $accent-dark;
+
     margin-right: auto;
     border-radius: 1rem 1rem 1rem 0.2rem;
   }

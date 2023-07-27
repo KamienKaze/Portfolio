@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { InfoSectionComponent } from './info-section/info-section.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [InfoSectionComponent],
+  exports: [InfoSectionComponent],
+  imports: [CommonModule],
 })
-export class InfoModule { }
+export class InfoModule {}

@@ -1,0 +1,92 @@
+@import "./../../../../assets/color-palette.scss";
+
+:host {
+  width: 100%;
+
+  border: solid 1px $accent-dark;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+
+  .header {
+    width: 100%;
+
+    margin: 1rem 0 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.7rem;
+
+    .profile-picture {
+      width: 5.5rem;
+      height: 5.5rem;
+
+      border-radius: 100%;
+
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    .name {
+      color: $font-dark;
+      font-size: 1.3rem;
+      user-select: none;
+    }
+  }
+
+  .icons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2rem;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 0.5rem;
+
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-drag: none;
+
+      .icon-background {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        border-radius: 100%;
+        background-color: $accent-dark;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          width: 24px;
+          height: 24px;
+
+          fill: $font-dark;
+
+          border-radius: 100%;
+        }
+      }
+
+      .description {
+        color: $font-dark;
+        user-select: none;
+      }
+
+      &:hover {
+        .icon-background {
+          background: $scrollbar-handle-dark;
+        }
+      }
+    }
+  }
+}
