@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MessageManagerService } from '../message-manager.service';
+import { Message } from '../message';
 
 @Component({
   selector: 'app-conversation-window',
@@ -13,17 +14,17 @@ export class WindowComponent {
 
   public messageToSend: string = '';
 
-  public messages: Array<string> = [];
+  public messages: Array<Message> = [];
 
   public onSendClick(): void {
     if (this.messageToSend != '') {
-      this.messages.push(this.messageToSend);
+      this.messages.push({ content: this.messageToSend, isBlue: true });
       this.messageToSend = '';
     }
   }
 
   constructor(private messageManager: MessageManagerService) {
-    messageManager.messagesSubject$.subscribe((message: string): void => {
+    messageManager.messagesSubject$.subscribe((message: Message): void => {
       this.messages.push(message);
       console.log(message);
     });

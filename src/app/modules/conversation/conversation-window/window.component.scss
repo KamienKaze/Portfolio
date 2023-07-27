@@ -141,5 +141,9 @@
       text-align: center;
       fill: $blue;
     }
+
+    .send-icon:active {
+      transform: scale(0.9);
+    }
   }
 }
