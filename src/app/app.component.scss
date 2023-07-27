@@ -1,5 +1,29 @@
 @import "./../assets/color-palette.scss";
 
+@media screen and (max-width: 770px) {
+  :host {
+    .active-main {
+      display: none;
+    }
+
+    .not-active-main {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 771px) {
+  :host {
+    .active-main {
+      display: flex;
+    }
+
+    .not-active-main {
+      display: flex;
+    }
+  }
+}
+
 :host {
   background-color: $background-dark;
   width: 100%;
@@ -9,4 +33,12 @@
   flex-direction: row;
 
   overflow: hidden;
+
+  .active-info {
+    display: flex;
+  }
+
+  .not-active-info {
+    display: none;
+  }
 }

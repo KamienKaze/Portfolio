@@ -1,4 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MessageManagerService } from '../message-manager.service';
 import { Message } from '../message';
 
@@ -8,18 +14,20 @@ import { Message } from '../message';
   styleUrls: ['./window.component.scss'],
 })
 export class WindowComponent {
+  @Output() isInfoExpanded: EventEmitter<boolean> = new EventEmitter<boolean>();
   @ViewChild('scrollMe') private myScrollContainer!: ElementRef;
+
   public githubLogoSrc: string = 'assets/icons/icons.svg#github';
   public linkedinLogoSrc: string = 'assets/icons/icons.svg#linkedin';
   public sendLogoSrc: string = 'assets/icons/icons.svg#send';
   public infoIconSrc: string = 'assets/icons/icons.svg#info';
 
-  public isActive: boolean = false;
-
   public messageToSend: string = '';
   public isSending: boolean = false;
 
   public messages: Array<Message> = [];
+
+  public isInfoButtonActive: boolean = false;
 
   public onSendClick(): void {
     if (this.messageToSend != '') {
@@ -34,6 +42,11 @@ export class WindowComponent {
       this.isSending = true;
       this.scrollToBottom();
     }, 1000);
+  }
+
+  public changeInfoPanelState(): void {
+    this.isInfoButtonActive = !this.isInfoButtonActive;
+    this.isInfoExpanded.emit(this.isInfoButtonActive);
   }
 
   private scrollToBottom(): void {

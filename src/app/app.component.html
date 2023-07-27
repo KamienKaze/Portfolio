@@ -1,2 +1,2 @@
-<app-conversation-window/>
-<app-info-section/>
+<app-conversation-window (isInfoExpanded)='updateIsInfoExpanded($event)' [ngClass]='isInfoExpanded ? "active-main" : "not-active-main"'/>
+<app-info-section [ngClass]='isInfoExpanded ? "active-info" : "not-active-info"'/>
