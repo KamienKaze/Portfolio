@@ -14,7 +14,7 @@ export class MessageManagerService {
     'I am a novice front-end developer',
     'Welcome to my portfolio page!',
     'I will tell you a few things about myself',
-    'If you forget anything, feel free to check info section in top right corner!',
+    'If you do not have time for animations, feel free to check info section in top right corner!',
   ];
 
   public runMessages(): void {
