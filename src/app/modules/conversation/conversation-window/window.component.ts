@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MessageManagerService } from '../message-manager.service';
 import { Message } from '../message';
 import { InfoExpandManagerService } from '../../shared/info-expand-manager.service';
@@ -16,7 +9,7 @@ import { InfoExpandManagerService } from '../../shared/info-expand-manager.servi
   styleUrls: ['./window.component.scss'],
 })
 export class WindowComponent {
-  @ViewChild('scrollMe') private myScrollContainer!: ElementRef;
+  @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
 
   public githubLogoSrc: string = 'assets/icons/icons.svg#github';
   public linkedinLogoSrc: string = 'assets/icons/icons.svg#linkedin';
@@ -25,6 +18,7 @@ export class WindowComponent {
 
   public messageToSend: string = '';
   public isSending: boolean = false;
+  public isInfoExpanded: boolean = false;
 
   public messages: Array<Message> = [];
 
@@ -52,8 +46,8 @@ export class WindowComponent {
   private scrollToBottom(): void {
     setTimeout((): void => {
       try {
-        this.myScrollContainer.nativeElement.scrollTop =
-          this.myScrollContainer.nativeElement.scrollHeight;
+        this.scrollContainer.nativeElement.scrollTop =
+          this.scrollContainer.nativeElement.scrollHeight;
       } catch (err) {}
     });
   }
@@ -67,6 +61,10 @@ export class WindowComponent {
       this.isSending = false;
       this.showTypingPopup();
       this.scrollToBottom();
+    });
+
+    infoExpandManager.isInfoExpanded.subscribe((isExpanded: boolean): void => {
+      this.isInfoExpanded = isExpanded;
     });
 
     this.showTypingPopup();
