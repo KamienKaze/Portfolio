@@ -9,13 +9,11 @@ import { InfoExpandManagerService } from './modules/shared/info-expand-manager.s
 export class AppComponent {
   public isInfoExpanded: boolean = false;
 
-  public currentInfoClass: string = '';
-  public currentMainClass: string = '';
-
   constructor(private infoExpandManager: InfoExpandManagerService) {
     infoExpandManager.isInfoExpanded.subscribe(
       (isInfoExpanded: boolean): void => {
         this.isInfoExpanded = isInfoExpanded;
+        console.log(isInfoExpanded);
       },
     );
   }

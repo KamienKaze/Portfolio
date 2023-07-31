@@ -8,7 +8,10 @@ export class InfoExpandManagerService {
   public isInfoExpanded: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
 
+  private isInfoExpandedState: boolean = false;
+
   public changeInfoState(): void {
-    this.isInfoExpanded.next(!this.isInfoExpanded);
+    this.isInfoExpandedState = !this.isInfoExpandedState;
+    this.isInfoExpanded.next(this.isInfoExpandedState);
   }
 }

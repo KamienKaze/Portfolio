@@ -2,43 +2,72 @@
 
 @media screen and (max-width: 770px) {
   :host {
-    .active-main {
-      display: none;
+    .app-info-wrapper {
+      width: 100vw;
+      position: fixed;
+      z-index: 2;
+      right: 0;
+
+      app-info-section {
+        position: fixed;
+        width: 100vw;
+        height: 100%;
+      }
     }
 
-    .not-active-main {
-      display: flex;
+    .info-collapsed {
+      width: 0;
+      transition: 1s width;
+
+      app-info-section {
+        transform: translateX(100vw);
+        transition: 1.1s transform;
+      }
+    }
+
+    .info-expanded {
+      width: 100%;
+      transition: 1s width;
+
+      app-info-section {
+        transform: none;
+        transition: 1.1s transform;
+      }
     }
   }
 }
 
 @media screen and (min-width: 771px) {
   :host {
-    .active-main {
-      display: flex;
+    .app-info-wrapper {
+      height: 100%;
+
+      app-info-section {
+        position: fixed;
+        width: 50vw;
+        height: 100%;
+      }
     }
 
-    .not-active-main {
-      display: flex;
+    .info-collapsed {
+      width: 0;
+      transition: 1s width;
+
+      app-info-section {
+        transform: translateX(100%);
+        transition: 0.8s transform;
+      }
     }
-  }
-}
 
-@keyframes info-enter {
-  from {
-    width: 0
-  }
-  to {
-    width: 100%;
-  }
-}
+    .info-expanded {
+      width: 100%;
+      transition: 1s width;
 
-@keyframes info-exit {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0;
+      app-info-section {
+        transform: none;
+        transition: 0.8s transform;
+      }
+    }
   }
 }
 
@@ -56,15 +85,12 @@
     height: 100%;
   }
 
-  app-info-section {
+  .app-info-wrapper {
+    background: $font-light;
     height: 100%;
-  }
 
-  .active-info {
-    display: flex;
-  }
+    app-info-section {
 
-  .not-active-info {
-    display: none;
+    }
   }
 }

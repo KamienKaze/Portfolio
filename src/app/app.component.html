@@ -1,5 +1,6 @@
 <app-conversation-window
-  [ngClass]='currentMainClass'/>
+  [ngClass]=''/>
 
-<app-info-section
-  [ngClass]='currentInfoClass'/>
+<div class="app-info-wrapper" [ngClass]='isInfoExpanded ? "info-expanded" : "info-collapsed"'>
+  <app-info-section/>
+</div>
