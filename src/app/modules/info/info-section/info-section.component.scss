@@ -25,6 +25,7 @@
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
+  overflow-y: scroll;
 
   .back-button-container {
     width: 100%;
@@ -138,5 +139,26 @@
 
   .dropdown-container {
     width: 100%;
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      margin-top: 2rem;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin: 1rem;
+        width: 5rem;
+      }
+    }
   }
 }

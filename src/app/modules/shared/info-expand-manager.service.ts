@@ -5,10 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class InfoExpandManagerService {
-  public isInfoExpanded: BehaviorSubject<boolean> =
-    new BehaviorSubject<boolean>(false);
+  private isInfoExpandedState: boolean = true;
 
-  private isInfoExpandedState: boolean = false;
+  public isInfoExpanded: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(this.isInfoExpandedState);
 
   public changeInfoState(): void {
     this.isInfoExpandedState = !this.isInfoExpandedState;
