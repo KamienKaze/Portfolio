@@ -147,6 +147,16 @@
 
       margin: 0 0 1rem 0;
 
+      .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        .name {
+          font-size: 1.5rem;
+        }
+      }
+
       h3 {
         user-select: none;
         text-align: center;
@@ -162,6 +172,7 @@
 
         box-shadow: 0 5px 5px $font-light;
         transition: 0.7s box-shadow;
+        text-align: center;
       }
 
       &:hover {
@@ -172,10 +183,13 @@
       }
     }
 
-
-
     .description {
       margin-top: 2rem;
+    }
+
+    img {
+      margin: 2rem;
+      width: 20%;
     }
 
     .row {
@@ -183,11 +197,6 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-
-      img {
-        margin: 1rem;
-        width: 5rem;
-      }
     }
   }
 

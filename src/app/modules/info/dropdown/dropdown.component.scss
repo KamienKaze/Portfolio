@@ -1,9 +1,11 @@
 @import "./../../../../assets/color-palette.scss";
 
 :host {
+
   .button {
     display: flex;
     flex-direction: row;
+    height: 1.5rem;
 
     margin: 1rem;
     padding: 1rem;
@@ -31,11 +33,24 @@
 
   .content {
     margin: 0 2rem 0 2rem;
+    max-height: inherit;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     color: $font-dark;
+
+    overflow: hidden;
+
+    user-select: none;
+  }
+
+  .expanded {
+    display: flex;
+  }
+
+  .collapsed {
+    display: none;
   }
 }
