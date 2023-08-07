@@ -38,8 +38,21 @@ export class WindowComponent {
 
   private showTypingPopup(): void {
     setTimeout((): void => {
-      this.isSending = true;
-      this.scrollToBottom();
+      if (this.messages.length == 0) {
+        this.isSending = true;
+        this.scrollToBottom();
+        return;
+      }
+
+      if (
+        this.messages[this.messages.length - 1].content ==
+        'Thanks for reading this, bye!'
+      ) {
+        this.isSending = false;
+      } else {
+        this.isSending = true;
+        this.scrollToBottom();
+      }
     }, 1000);
   }
 
