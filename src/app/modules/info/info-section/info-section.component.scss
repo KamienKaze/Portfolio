@@ -5,6 +5,15 @@
     .back-button-container {
       display: flex;
     }
+
+    .dropdown-container {
+
+      .project {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }
 
@@ -12,6 +21,16 @@
   :host {
     .back-button-container {
       display: none;
+    }
+
+    .dropdown-container {
+      .project {
+        flex-direction: row;
+
+        p {
+
+        }
+      }
     }
   }
 }
@@ -167,7 +186,7 @@
         width: 100%;
         font-size: 1.2rem;
         padding: 1rem;
-        margin-bottom: 1rem;
+
         user-select: none;
 
         box-shadow: 0 5px 5px $font-light;
@@ -194,11 +213,14 @@
 
     .project {
       display: flex;
-      flex-direction: row;
 
       margin: 2rem 1rem 2rem 1rem;
 
       width: 100%;
+
+      * {
+        text-align: center;
+      }
 
       .text-wrapper {
         display: flex;
