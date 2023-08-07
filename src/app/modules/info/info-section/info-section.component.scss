@@ -145,7 +145,7 @@
       flex-direction: row;
       align-items: center;
 
-      margin: 0 0 1rem 0;
+      margin: 0.5rem 0 1rem 0;
 
       .text-wrapper {
         display: flex;
@@ -187,16 +187,75 @@
       margin-top: 2rem;
     }
 
-    img {
+    .image {
       margin: 2rem;
       width: 20%;
     }
+
+    .project {
+      display: flex;
+      flex-direction: row;
+
+      margin: 2rem 1rem 2rem 1rem;
+
+      width: 100%;
+
+      .text-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+
+          a {
+            color: $font-dark;
+            text-decoration: underline;
+          }
+        }
+
+        p {
+          margin: 1rem;
+        }
+
+      }
+
+      img {
+        width: 60%;
+      }
+    }
+
 
     .row {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+    }
+
+    .contact-dropdown {
+      display: flex;
+      flex-direction: column;
+
+      margin: 1rem 0 3rem 0;
+
+      border: 1px solid $accent-dark;
+      border-radius: 1rem;
+
+      .contact {
+        margin: 1rem;
+        user-select: text;
+        color: $font-dark;
+      }
+
+      .contact-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
