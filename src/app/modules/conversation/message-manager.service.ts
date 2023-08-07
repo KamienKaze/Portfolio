@@ -21,13 +21,10 @@ export class MessageManagerService {
     let time: number = 2000;
 
     for (let i: number = 0; i < this.messages.length; i++) {
-      time += this.messages[i].length * 50;
-      setTimeout(
-        (): void => {
-          this.sendMessage(i);
-        },
-        (this.messages[i].length * 50) / 2 + time,
-      );
+      time += this.messages[i].length * 70;
+      setTimeout((): void => {
+        this.sendMessage(i);
+      }, time);
     }
   }
 
