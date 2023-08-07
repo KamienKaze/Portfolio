@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class InfoExpandManagerService {
-  private isInfoExpandedState: boolean = true;
+  private isInfoExpandedState: boolean = false;
 
   public isInfoExpanded: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(this.isInfoExpandedState);
