@@ -10,10 +10,10 @@
     margin: 1rem;
     padding: 1rem;
 
-    box-shadow: 0 0 2px $accent-dark;
+    box-shadow: 5px 5px 8px $accent-dark;
     border-radius: 1rem;
 
-    .text{
+    .text {
       width: 100%;
 
       font-size: 1.3rem;
@@ -26,8 +26,16 @@
       height: 24px;
 
       fill: $font-dark;
+    }
 
+    .expanded-icon {
+      transform: rotate(270deg);
+      //transition: 1s transform;
+    }
+
+    .collapsed-icon {
       transform: rotate(90deg);
+      //transition: 1s transform;
     }
   }
 
